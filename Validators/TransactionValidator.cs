@@ -74,9 +74,8 @@ namespace TransactionAPI.Validators
 
             var timeDifference = Math.Abs((serverTime - parsedTimestamp).TotalMinutes);
 
-            //iman temp
-            //if (timeDifference > 5)
-            //    result.AddError("Expired.");
+            if (timeDifference > 5)
+                result.AddError("Expired.");
         }
 
         private void ValidateItems(TransactionRequest request, ValidationResult result)
